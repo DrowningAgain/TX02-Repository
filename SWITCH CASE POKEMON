@@ -1,0 +1,16 @@
+switch(choice)
+		{
+		
+			case 1:
+				system("cls");
+				system("pause");
+				break;
+			case 2:
+				system("cls");
+				system("pause");
+				break;
+			case 3:
+				cout<<"Exiting Pokemon :3";
+				break;
+			default;
+			cout<<"Invalid";
