@@ -1,0 +1,6 @@
+for(int a = 0; a <= 18; a++){
+		cout << "[" << a << "] - " << types[a] << "\t";
+		
+		if((a + 1) % 5 == 0){
+			cout << endl;
+		}
