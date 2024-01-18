@@ -1,5 +1,5 @@
 for(int a = 0; a <= 18; a++){
-		cout << "[" << a << "] - " << types[a] << "\t";
+		cout << "[" << a << "] - " << types[a] << "\t"; //replace types with your type array.
 		
 		if((a + 1) % 5 == 0){
 			cout << endl;
