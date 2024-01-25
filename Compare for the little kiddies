@@ -1,0 +1,19 @@
+void compare(){ //Compare for activity 3.1 - syr;
+	title("COMPARE");
+	
+	ask();
+	switch(strcmp(str1, str2))
+	{
+		case 1:
+			cout << "Positive";
+			break;
+		case -1:
+			cout << "Negative";
+			break;
+		case 0:
+			cout << "Equal";
+			break;
+	}
+	
+	
+}
