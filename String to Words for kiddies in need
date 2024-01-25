@@ -1,0 +1,13 @@
+void stringwords(){ //String to words for activity 3.6 - syr;
+	title("STRING TO WORDS");
+	ask(2);
+	
+	for(int a = 0; a <= strlen(str1); a++)
+	if(str1[a] == ' ')
+		cout << endl;
+	else
+	cout << str1[a];
+	
+	
+	
+}
