@@ -1,0 +1,104 @@
+#include <iostream>
+using namespace std;
+
+// Node structure for the linked list
+struct Node {
+    int data;
+    Node* next;
+};
+
+// Function to append a node at the front of the linked list
+void appendAtFront(Node** head, int newData) {
+    Node* newNode = new Node();
+    newNode->data = newData;
+    newNode->next = *head;
+    *head = newNode;
+}
+
+// Function to append a node at the end of the linked list
+void appendAtEnd(Node** head, int newData) {
+    Node* newNode = new Node();
+    newNode->data = newData;
+    newNode->next = NULL;
+
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+
+    Node* temp = *head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+
+    temp->next = newNode;
+}
+
+// Function to display the nodes in the linked list
+void displayList(Node* head) {
+    Node* temp = head;
+    while (temp != NULL) {
+        cout << &(*temp) << " | " << temp->data << " | " << temp->next << endl;
+        temp = temp->next;
+    }
+}
+
+int main() {
+    Node* head1 = NULL;
+    Node* head2 = NULL;
+
+    while (true) {
+        int choice;
+        cout << "Choose an operation:" << endl;
+        cout << "1. Append a node at the front of the first linked list" << endl;
+        cout << "2. Append a node at the end of the first linked list" << endl;
+        cout << "3. Display nodes in the first linked list" << endl;
+        cout << "4. Append a node at the front of the second linked list" << endl;
+        cout << "5. Append a node at the end of the second linked list" << endl;
+        cout << "6. Display nodes in the second linked list" << endl;
+        cout << "7. Exit" << endl;
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                int data1_front;
+                cout << "Enter data to append at the front of the first linked list: ";
+                cin >> data1_front;
+                appendAtFront(&head1, data1_front);
+                break;
+            case 2:
+                int data1_end;
+                cout << "Enter data to append at the end of the first linked list: ";
+                cin >> data1_end;
+                appendAtEnd(&head1, data1_end);
+                break;
+            case 3:
+                cout << "Nodes in the first linked list:" << endl;
+                displayList(head1);
+                break;
+            case 4:
+                int data2_front;
+                cout << "Enter data to append at the front of the second linked list: ";
+                cin >> data2_front;
+                appendAtFront(&head2, data2_front);
+                break;
+            case 5:
+                int data2_end;
+                cout << "Enter data to append at the end of the second linked list: ";
+                cin >> data2_end;
+                appendAtEnd(&head2, data2_end);
+                break;
+            case 6:
+                cout << "Nodes in the second linked list:" << endl;
+                displayList(head2);
+                break;
+            case 7:
+                exit(0);
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    }
+
+    return 0;
+}
